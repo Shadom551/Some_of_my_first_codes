@@ -110,7 +110,7 @@ def start():
 start()
 stat_database()
 while True:
-    preguntar_arma()
+    ask_weapon()
     if input("Want to look for another weapon?").upper() == "NO":
         break
 print("Hope i was able to help you find the weapon you wanted, have a great day!")
