@@ -12,7 +12,6 @@ def weapon_finder(url):
 
     weapon_entries = soup.find_all("a", class_="category-page__member-link")
     for entry in weapon_entries:
-        print(type(entry))
         weapon_name = entry.text
         weapon_link = "https://warframe.fandom.com" + entry.get("href")
         if weapon_name.split(":")[0] in ['Category','Amp',"Conclave","User","Template"] or weapon_name.split("/")[0] in ["Blueprints"] or "Skin" in weapon_name.split(" ") or weapon_name in ["Necramech","Syndicate Weapons","Exalted Weapon","Orb Vallis Survival Collection","Kitgun","Incarnon"]:
