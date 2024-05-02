@@ -99,7 +99,7 @@ def ask_weapon():
 def start():
     global urls, weapon_list, link_list, value_list_global, data_list_global
     alphabet = ["A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    urls = ["https://warframe.fandom.com/wiki/Category:Weapons?from="+Inicial for Inicial in alphabeto]
+    urls = ["https://warframe.fandom.com/wiki/Category:Weapons?from="+Inicial for Inicial in alphabet]
     weapon_list = []
     link_list = []
     value_list_global = []
