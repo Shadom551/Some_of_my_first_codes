@@ -54,9 +54,9 @@ def weapon_stat_finder(weapon):
             
             
 def stat_database():
-    global armas,weapon_list,link_list,data_list_global,value_list_global,weapon_data,urls,tic2
+    global weapons,weapon_list,link_list,data_list_global,value_list_global,weapon_data,urls,tic2
     tic = time.perf_counter()
-    armas = {}
+    weapons = {}
     for url in urls:
         weapon_finder(url)
 
@@ -66,7 +66,7 @@ def stat_database():
 
         for k in data_list_global[weapon_list.index(weapon)]: 
             weapon_data[k] = value_list_global[weapon_list.index(weapon)][data_list_global[weapon_list.index(weapon)].index(k)]
-        armas[weapon] = weapon_data
+        weapons[weapon] = weapon_data
         toc2 = time.perf_counter()
         print(f"{weapon} done in {toc2 - tic2:0.4f} seconds")
     toc = time.perf_counter()
@@ -88,9 +88,9 @@ def ask_weapon():
             except ValueError:
                 "next page"
         print('Name : ',weapon)
-        for i in armas[weapon]: 
+        for i in weapons[weapon]: 
             print("+"+"-"*55+"+")
-            print("|",i,":",armas[weapon][i]," "*(50-(len(i)+len(armas[weapon][i])))+"|") 
+            print("|",i,":",weapons[weapon][i]," "*(50-(len(i)+len(weapons[weapon][i])))+"|") 
         print("+"+"-"*55+"+")
     except KeyError:
         pass
@@ -98,7 +98,7 @@ def ask_weapon():
           
 def start():
     global urls, weapon_list, link_list, value_list_global, data_list_global
-    alphabeto = ["A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    alphabet = ["A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     urls = ["https://warframe.fandom.com/wiki/Category:Weapons?from="+Inicial for Inicial in alphabeto]
     weapon_list = []
     link_list = []
